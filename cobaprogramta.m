@@ -22,7 +22,7 @@ for k = 1 : length(theFiles)
     img = imread(fullFileName);
     
     %generate feature
-    load('featurestype.mat'); %specific feature nyolong di mlvessel
+    load('featurestype.mat'); %specific feature mengikuti di mlvessel
     [features, mask] = guigeneratefeaturescolored(img, featurestype);
     
     %gmmlikelihood
@@ -30,7 +30,7 @@ for k = 1 : length(theFiles)
     featurefilename.mask = mask;
     featurefilename.description = fff.description;
     featurefilename.features = cat(3,features{1,5}.data,features{1,4}.data,features{1,3}.data,features{1,2}.data,features{1,1}.data);
-    modelfilename = load('Modelfilename.mat'); %model nyolong mlvessel
+    modelfilename = load('Modelfilename.mat'); %model mengikuti mlvessel
     
     %posterior probabilities
     gray = gmmclassifygray(featurefilename, modelfilename);
